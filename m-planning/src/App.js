@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          React
+          {/* React ยูหู้ */}
         </a>
       </header>
     </div>

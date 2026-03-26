@@ -16,10 +16,10 @@ const db = mysql.createConnection({
 
 db.connect((err) => {
     if (err) {
-        console.error('เชื่อมต่อ MySQL ล้มเหลว:', err);
+        console.error('MySQL connection failed:', err);
         return;
     }
-    console.log('เชื่อมต่อฐานข้อมูล meal_planning_db สำเร็จ!');
+    console.log('Database connection successful!');
 });
 
 // --- 2. API สำหรับดึงข้อมูลอาหาร (ดึงข้อมูลแบบ 3NF) ---
@@ -51,5 +51,5 @@ app.post('/api/meal-plans', (req, res) => {
 
 const PORT = 5000;
 app.listen(PORT, () => {
-    console.log(`Server กำลังรันที่ http://localhost:${PORT}`);
+    console.log(`Server is running at http://localhost:${PORT}`);
 });

@@ -1,7 +1,7 @@
-// App.js
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import FoodCard from './components/FoodCard'; // นำเข้า Component ที่สร้างไว้
+import FoodCard from './components/FoodCard';
+import Navbar from './components/Navbar';
 
 function App() {
   const [foods, setFoods] = useState([]);
@@ -14,17 +14,27 @@ function App() {
   }, []);
 
   return (
-    <div className="app-container">
-      <header className="app-header">
-        <h1>DailyMeal Support</h1>
-        <p>ระบบสนับสนุนการวางแผนรับประทานอาหาร</p>
-      </header>
+    <div className="main-layout">
+      <Navbar />
 
-      <main className="food-grid">
-        {foods.map(food => (
-          <FoodCard key={food.food_id} food={food} />
-        ))}
-      </main>
+      <div className="app-container">
+        <header className="app-header">
+          <h1>MealPlan</h1>
+          <p>ระบบช่วยวางแผนการรับประทานอาหารในชีวิตประจำวัน เพื่อให้ได้รับพลังงานอย่างเหมาะสม</p>
+        </header>
+
+        <main className="food-grid">
+          {foods.length > 0 ? (
+            foods.map(food => (
+              <FoodCard key={food.food_id} food={food} />
+            ))
+          ) : (
+            <div className="loading-state">
+              <p>กำลังโหลดข้อมูลอาหาร...</p>
+            </div>
+          )}
+        </main>
+      </div>
     </div>
   );
 }

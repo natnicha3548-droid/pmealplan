@@ -17,7 +17,6 @@ function FoodCard({ food, onClick }) {
                     {/* เก็บไว้เฉพาะแคลอรี่ เพื่อให้การ์ดดูเรียบง่าย */}
                     <span className="kcal-badge">{food.calories} kcal</span>
                 </div>
-                <p className="click-hint">คลิกเพื่อดูสารอาหารและวิธีปรุง</p>
             </div>
         </div>
     );

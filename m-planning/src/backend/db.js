@@ -10,10 +10,10 @@ const db = mysql.createConnection({
 
 db.connect((err) => {
     if (err) {
-        console.error('เชื่อมต่อไม่สำเร็จ: ' + err.message);
+        console.error('Failed to connect: ' + err.message);
         return;
     }
-    console.log('เชื่อมต่อฐานข้อมูล meal_planning_db สำเร็จแล้ว!');
+    console.log('Database connection successful!');
 });
 
 module.exports = db;
